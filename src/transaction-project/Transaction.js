@@ -9,7 +9,7 @@ function Trasaction({ items, updateTransaction, DeleteTransaction }) {
     }
     function updateTransactionList(e) {
         let index = e.classList[0];
-        updateTransaction(index);
+        updateTransaction(index, true);
     }
     function deleteTransaction(e) {
         let index = e.classList[0];
