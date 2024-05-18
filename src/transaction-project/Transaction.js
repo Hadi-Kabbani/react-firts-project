@@ -19,8 +19,8 @@ function Trasaction({ items, updateTransaction, DeleteTransaction }) {
         <li key={index} className={`${ele.className} w-100 d-flex align-items-center justify-content-evenly ${ele.amount < 0 ? "danger text-bg-danger" : "success text-bg-success"} p-1 mt-2 mb-2`}>
             <span className="text-light fs-5 fw-bold">{ele.description}</span>
             <span className="-text-light fs-6">{ele.amount}</span>
-            <button className={`${ele.amount < 0 ? "btn btn-danger p-2" : "btn btn-success p-2"} fs-6`} onClick={(e) => updateTransactionList(e.target.parentNode)}>update</button>
-            < button className={`danger-btn`} onClick={(e) => deleteTransaction(e.target.parentNode)}>x</button>
+            <button className={` update_button ${ele.amount < 0 ? "btn btn-danger p-2" : "btn btn-success p-2"} fs-6`} onClick={(e) => updateTransactionList(e.target.parentNode)}>update</button>
+            < button className={`x_button ${ele.amount < 0 ? "danger text-bg-danger" : "success text-bg-success"}`} onClick={(e) => deleteTransaction(e.target.parentNode)}>x</button>
         </li >
     ));
 }

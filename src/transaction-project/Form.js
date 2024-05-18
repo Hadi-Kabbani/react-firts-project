@@ -56,7 +56,7 @@ function Form({ changeValuesOfUpdatedObject, addTransaction, updateValue, update
                             <input className='btn btn-outline-info w-100 mb-2' type="submit" value={updateBoolean ? 'Confirm Update' : 'Add Transaction'} />
                         </div>
                         <div className='col-12 col-lg-6'>
-                            <input className='btn btn-dark w-100 mb-2' type="submit" value="Cancel" onClick={cancel} />
+                            <input className='btn btn-outline-danger w-100 mb-2' type="submit" value="Cancel" onClick={cancel} />
                         </div>
                     </div>
                 </div>

@@ -1,14 +1,29 @@
 * {
   box-sizing: border-box;
 }
+
 :root {
-  --danger-color: #ff0000;
-  --success-color: #3cff00;
+  --primary-bg-color: #f0f4f8;
+  --container-bg-color: #ffffff;
+  --primary-text-color: #333333;
+  --secondary-text-color: #666666;
+  --border-color: #cccccc;
+  --success-bg-color: #d4edda;
+  --success-border-color: #28a745;
+  --danger-bg-color: #f8d7da;
+  --danger-border-color: #f54456;
+  --btn-primary-color: #0056b3; /* Updated primary button color */
+  --btn-primary-hover-color: #003d80; /* Darker shade for hover */
+  --btn-secondary-color: #6c757d;
+  --btn-secondary-hover-color: #565e64;
+  --input-focus-color: #66afe9; /* Updated input focus color */
 }
+
 body {
   height: 100vh;
-  position: relative;
-  background-color: #84e1f4;
+  background: linear-gradient(to bottom right, #f7f7f7, #e6f2ff, #ffd9d9);
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
 .container {
@@ -16,70 +31,126 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(146, 232, 249, 1) 100%
-  );
+  background: linear-gradient(-50deg, #f7f7f7 0%, #e6f2ff 40%, #ffd9d9 100%);
   padding: 20px;
   border-radius: 20px;
-  border: 1px solid white;
+  border: 1px solid #d3d3d3;
 }
+
 .danger {
-  border-left: 8px solid var(--danger-color);
+  border-left: 8px solid var(--danger-border-color);
 }
+
 .success {
-  border-left: 8px solid var(--success-color);
+  border-left: 8px solid var(--success-border-color);
 }
+
 .danger-btn {
   display: none;
   position: absolute;
   right: 10px;
   top: 10px;
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-bottom: 5px;
-  padding-top: 5px;
-  border: var(--success-color) 1px solid;
+  padding: 5px;
+  border: var(--danger-border-color) 1px solid;
   background-color: transparent;
+  color: var(--danger-border-color);
 }
+
+.danger-btn:hover {
+  background-color: var(--danger-border-color);
+  color: #ffffff;
+}
+
 .form-floating > label {
   left: 10px;
 }
+
 .form-control {
-  border: lightblue solid var(--bs-border-color);
+  border: 1px solid var(--border-color);
 }
+
 .form-control:focus {
-  border-color: #1062d9;
+  border-color: var(--input-focus-color);
+  box-shadow: 0 0 0 0.2rem rgba(102, 175, 233, 0.25);
 }
+
 .transaction-list li {
   position: relative;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
+  margin-bottom: 10px;
+  padding: 10px;
 }
+
 .transaction-list li:hover .danger-btn {
   display: block !important;
 }
 
 .income-div {
-  width: 100%;
-  background-color: var(--success-color);
-  padding: 30px;
-  margin-bottom: 10px;
-  margin-top: 20px;
-  border: 5px solid green;
+  height: 100px;
+  background-color: var(--success-bg-color);
+  color: var(--success-border-color);
+  border: 5px solid var(--success-border-color);
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .expense-div {
-  width: 100%;
-  background-color: var(--danger-color);
-  padding: 30px;
-  margin-bottom: 20px;
-  margin-top: 10px;
-  border: 5px solid rgb(112, 11, 11);
+  height: 100px;
+  background-color: var(--danger-bg-color);
+  color: var(--danger-border-color);
+  border: 5px solid var(--danger-border-color);
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.text-success {
+  color: var(--success-border-color);
+}
+
+.text-danger {
+  color: var(--danger-border-color);
+}
+
+.balance {
+  font-size: 2rem;
+}
+
+.income,
+.expense {
+  font-weight: bold;
+}
+
+.btn-outline-info {
+  color: var(--btn-primary-color);
+  border-color: var(--btn-primary-color);
+}
+
+.btn-outline-info:hover {
+  color: #fff;
+  background-color: var(--btn-primary-color);
+  border-color: var(--btn-primary-color);
+}
+
+.btn-dark {
+  color: #fff;
+  background-color: var(--btn-secondary-color);
+  border-color: var(--btn-secondary-color);
+}
+
+.btn-dark:hover {
+  color: #fff;
+  background-color: var(--btn-secondary-hover-color);
+  border-color: var(--btn-secondary-hover-color);
+}
+.x_button,
+.update_button {
+  display: none;
+}
+
+.transaction-list li:hover .x_button,
+.transaction-list li:hover .update_button {
+  display: block;
 }
